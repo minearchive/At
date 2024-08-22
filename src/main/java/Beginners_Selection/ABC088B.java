@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
-public class ABC008B {
+public class ABC088B {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -18,10 +18,10 @@ public class ABC008B {
             integers.add(scanner.nextInt());
         }
 
-        integers = integers.stream().sorted(Comparator.comparing(i -> i)).toList();
+        List<Integer> ints = integers.stream().sorted(Comparator.comparing(i -> i)).sorted(Comparator.reverseOrder()).toList();
 
         int i = 0;
-        for (Integer integer : integers) {
+        for (int integer : ints) {
             if (i % 2 == 1) score -= integer;
             else score += integer;
 
